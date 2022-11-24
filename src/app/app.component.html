@@ -1,10 +1,24 @@
-<main>
+<div class="container">
+
   <app-container>
-    <app-header>
 
-    </app-header>
+    <p-editor [(ngModel)]="sendtext" styleClass="editor" [style]="{'min-height':'400px', 'height':'400px'}">
+      <ng-template pTemplate="header">
+        <span class="ql-formats">
+          <button type="button" class="ql-bold" aria-label="Bold"></button>
+          <button type="button" class="ql-italic" aria-label="Italic"></button>
+          <button type="button" class="ql-strike" aria-label="Strikethrough "></button>
+        </span>
+      </ng-template>
+    </p-editor>
 
-    
+    <app-sender (number)="sendMessage($event)"></app-sender>
 
   </app-container>
-</main>
+
+  <legend>
+    Escreva e edite o texto na caixa de menssagem acima. <br>
+    Infome o número do contato do wpp e clique no botão, <p-badge [value]="'Enviar'" severity="success"></p-badge>, para
+    enviar a menssagem.
+  </legend>
+</div>

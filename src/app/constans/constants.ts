@@ -1,0 +1,1 @@
+export const WPP_URL = "https://wa.me"
