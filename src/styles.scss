@@ -7,8 +7,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 3rem;
+    padding-top: 16px;
 
+    @media (max-width: 900px) {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 
 }
 
