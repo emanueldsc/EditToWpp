@@ -20,7 +20,39 @@
     height: 100%;
 }
 
-legend {
-    font-family: 'Comic Sans MS', cursive;
+legend,
+h2 {
+    font-family: 'Comic Sans MS', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
     margin-top: 8px;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+}
+
+footer {
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >* {
+        display: flex;
+        justify-content: inherit;
+        align-items: inherit;
+        gap: 5px;
+        flex-direction: column;
+
+        span {
+            color: #3d3d3d;
+            font-style: italic;
+        }
+    }
+
+    .icons {
+        display: flex;
+        gap: 5px
+    }
+
 }
