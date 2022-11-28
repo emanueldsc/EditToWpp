@@ -4,8 +4,17 @@
     align-items: center;
     padding-top: 8px;
     gap: 8px;
-
-    .inputMask {
-        text-align: center;
+    
+    :first-child {
+        flex-grow: 1;
+        > input {
+            width: 100%;
+        }    
     }
+
+}
+
+.telefone {
+    flex-grow: 1;
+    width: 100%;
 }
