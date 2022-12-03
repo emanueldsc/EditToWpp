@@ -1,4 +1,4 @@
-<p-inputMask style="width: 100%;" styleClass="w-100 text-center" type="tel" pattern="\d{12,13}" value="85987469307" placeholder="(99) 9 9999-9999"
+<p-inputMask [style]="{'width': '100%'}" styleClass="w-100 text-center" type="tel" pattern="\d{12,13}" value="85987469307" placeholder="(99) 9 9999-9999"
     mask="(99) 9 9999-9999" #wppNumber></p-inputMask>
 <button pButton pRipple type="button" label="Enviar" iconPos="right" icon="pi pi-whatsapp" class="p-button-success"
     (click)="issueNumber(wppNumber.value)"></button>

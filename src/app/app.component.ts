@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { WPP_URL } from './constans/constants';
-import { ToWppPipe } from './shared/Pipes/to-wpp.pipe';
+import { ItalicPipe, StrongPipe, UnderlinePipe, WppPipe } from './shared/Pipes/to-wpp.pipe';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,10 @@ import { ToWppPipe } from './shared/Pipes/to-wpp.pipe';
 export class AppComponent {
 
   constructor(
-    private wppPipe: ToWppPipe
+    private wppPipe: WppPipe,
+    private italic: ItalicPipe,
+    private strong: StrongPipe,
+    private underline: UnderlinePipe
   ) { }
 
   sendtext = "";
@@ -20,11 +23,12 @@ export class AppComponent {
     wpp = wpp ? `/55${wpp}` : "";
     let url = `${WPP_URL}${wpp}`;
     if (this.sendtext) {
-      const text = this.wppPipe.transform(this.sendtext);
+      let text = this.wppPipe.transform(this.sendtext);
+      text = this.italic.transform(text);
+      text = this.strong.transform(text);
+      text = this.underline.transform(text);
       url += `?text=${text}`;
-      console.log(url);
     }
-    debugger
     window.open(url, "_blank");
   }
 }
